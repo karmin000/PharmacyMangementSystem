@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import java.lang.String?>
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="622.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.zuev.pharmacymangementsystem.dashboardController">
+   <children>
+      <AnchorPane fx:id="main_form" prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <BorderPane layoutX="145.0" layoutY="90.0" prefHeight="600.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <top>
+                  <AnchorPane prefHeight="45.0" prefWidth="200.0" styleClass="top-form" stylesheets="@css/dashboardDesign.css" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane prefHeight="33.0" prefWidth="1003.0" styleClass="semi-top-form" stylesheets="@css/dashboardDesign.css">
+                           <children>
+                              <Label layoutX="33.0" layoutY="8.0" text="Pharmacy Management System" />
+                              <FontAwesomeIcon glyphName="HEART" layoutX="8.0" layoutY="22.0" size="1.3em" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0" />
+                              <Button fx:id="close" layoutX="930.0" layoutY="5.0" mnemonicParsing="false" onAction="#close" prefHeight="24.0" prefWidth="56.0" styleClass="close" stylesheets="@css/dashboardDesign.css" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="5.0">
+                                 <graphic>
+                                    <FontAwesomeIcon glyphName="CLOSE" size="1.2em" />
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="minimize" layoutX="886.0" layoutY="6.0" mnemonicParsing="false" onAction="#minimize" prefHeight="24.0" prefWidth="56.0" styleClass="minimize" stylesheets="@css/dashboardDesign.css">
+                                 <graphic>
+                                    <FontAwesomeIcon glyphName="LINE" size="1.2em" />
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </top>
+               <left>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="nav-form" stylesheets="@css/dashboardDesign.css" BorderPane.alignment="CENTER">
+                     <children>
+                        <Button fx:id="dashboard_btn" layoutX="16.0" layoutY="223.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="30.0" prefWidth="168.0" styleClass="nav-btn" stylesheets="@css/dashboardDesign.css" text="Главная панель" textFill="WHITE">
+                           <graphic>
+                              <FontAwesomeIcon fill="WHITE" glyphName="DASHBOARD" />
+                           </graphic>
+                        </Button>
+                        <FontAwesomeIcon fill="WHITE" glyphName="USER_MD" layoutX="53.0" layoutY="125.0" size="10em" />
+                        <Button fx:id="addMedicines_btn" layoutX="16.0" layoutY="263.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="30.0" prefWidth="169.0" styleClass="nav-btn" stylesheets="@css/dashboardDesign.css" text="Добавить лекарства" textFill="WHITE">
+                           <graphic>
+                              <FontAwesomeIcon fill="WHITE" glyphName="PLUS" />
+                           </graphic>
+                        </Button>
+                        <Button fx:id="purchase_btn" layoutX="15.0" layoutY="302.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="30.0" prefWidth="170.0" styleClass="nav-btn" stylesheets="@css/dashboardDesign.css" text="Купить лекарства" textFill="WHITE">
+                           <graphic>
+                              <FontAwesomeIcon fill="WHITE" glyphName="MONEY" />
+                           </graphic>
+                        </Button>
+                        <Button fx:id="logout" layoutX="27.0" layoutY="506.0" mnemonicParsing="false" onAction="#logout" prefHeight="42.0" prefWidth="125.0" styleClass="logout-btn" stylesheets="@css/dashboardDesign.css" text="Выход">
+                           <graphic>
+                              <FontAwesomeIcon glyphName="SIGN_OUT" size="2em" />
+                           </graphic>
+                        </Button>
+                        <Label fx:id="username" layoutX="53.0" layoutY="156.0" prefHeight="30.0" prefWidth="121.0" text="USERNAME" textFill="WHITE">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </left>
+               <right>
+                  <AnchorPane prefHeight="587.0" prefWidth="803.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane fx:id="dashboard_form" prefHeight="577.0" prefWidth="803.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane fx:id="dashboard_chart" layoutX="10.0" layoutY="14.0" prefHeight="351.0" prefWidth="783.0" stylesheets="@css/dashboardDesign.css">
+                                 <children>
+                                    <AreaChart layoutX="16.0" layoutY="24.0" prefHeight="377.0" prefWidth="751.0" title="График дохода">
+                                      <xAxis>
+                                        <CategoryAxis side="BOTTOM" />
+                                      </xAxis>
+                                      <yAxis>
+                                        <NumberAxis side="LEFT" />
+                                      </yAxis>
+                                    </AreaChart>
+                                 </children>
+                                 <styleClass>
+                                    <String fx:value="white-bg" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                              </AnchorPane>
+                              <AnchorPane layoutX="10.0" layoutY="428.0" prefHeight="135.0" prefWidth="783.0" stylesheets="@css/dashboardDesign.css">
+                                 <styleClass>
+                                    <String fx:value="white-bg" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                                 <children>
+                                    <AnchorPane layoutX="14.0" layoutY="12.0" prefHeight="111.0" prefWidth="216.0" styleClass="card" stylesheets="@css/dashboardDesign.css">
+                                       <children>
+                                          <FontAwesomeIcon fill="WHITE" glyphName="CHECK" layoutX="14.0" layoutY="65.0" size="5em" />
+                                          <Label layoutX="44.0" layoutY="81.0" text="Доступные лекарства" textAlignment="RIGHT" textFill="WHITE">
+                                             <font>
+                                                <Font name="Arial Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="dashboard_availableMed" alignment="CENTER_RIGHT" layoutX="132.0" layoutY="14.0" prefHeight="17.0" prefWidth="70.0" text="0" textAlignment="RIGHT" textFill="WHITE">
+                                             <font>
+                                                <Font name="Arial Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane layoutX="284.0" layoutY="12.0" prefHeight="111.0" prefWidth="216.0" styleClass="card" stylesheets="@css/dashboardDesign.css">
+                                       <children>
+                                          <FontAwesomeIcon fill="WHITE" glyphName="MONEY" layoutX="13.0" layoutY="66.0" size="5em" />
+                                          <Label layoutX="100.0" layoutY="80.0" text="Общий доход" textAlignment="RIGHT" textFill="WHITE">
+                                             <font>
+                                                <Font name="Arial Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="dashboard_totalIncome" alignment="CENTER_RIGHT" layoutX="133.0" layoutY="15.0" prefHeight="17.0" prefWidth="69.0" text="₽0.0" textAlignment="RIGHT" textFill="WHITE">
+                                             <font>
+                                                <Font name="Arial Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane layoutX="553.0" layoutY="12.0" prefHeight="111.0" prefWidth="216.0" styleClass="card" stylesheets="@css/dashboardDesign.css">
+                                       <children>
+                                          <FontAwesomeIcon fill="WHITE" glyphName="USERS" layoutX="5.0" layoutY="66.0" size="5em" />
+                                          <Label layoutX="53.0" layoutY="80.0" text="Число покупателей" textAlignment="RIGHT" textFill="WHITE">
+                                             <font>
+                                                <Font name="Arial Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="dashboard_totalCustomers" alignment="CENTER_RIGHT" layoutX="138.0" layoutY="15.0" prefHeight="17.0" prefWidth="61.0" text="0" textAlignment="RIGHT" textFill="WHITE">
+                                             <font>
+                                                <Font name="Arial Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="addMedicines_form" layoutX="202.0" layoutY="89.0" prefHeight="577.0" prefWidth="803.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="217.0" prefWidth="776.0" stylesheets="@css/dashboardDesign.css">
+                                 <styleClass>
+                                    <String fx:value="white-bg" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                                 <children>
+                                    <Label layoutX="56.0" layoutY="37.0" text="ID лекарства:" />
+                                    <Label layoutX="41.0" layoutY="70.0" text="Производитель:" />
+                                    <Label layoutX="74.0" layoutY="104.0" text="Название:">
+                                       <font>
+                                          <Font name="Arial" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="107.0" layoutY="146.0" text="Тип:">
+                                       <font>
+                                          <Font name="Arial" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="addMedicines_medicineID" layoutX="140.0" layoutY="33.0" styleClass="textfield" stylesheets="@css/dashboardDesign.css" />
+                                    <TextField fx:id="addMedicines_brand" layoutX="140.0" layoutY="66.0" styleClass="textfield" stylesheets="@css/dashboardDesign.css" />
+                                    <TextField fx:id="addMedicines_productName" layoutX="140.0" layoutY="100.0" styleClass="textfield" stylesheets="@css/dashboardDesign.css" />
+                                    <ComboBox fx:id="addMedicines_type" layoutX="140.0" layoutY="142.0" onAction="#addMedicineListType" prefWidth="150.0" promptText="Выберите" styleClass="textfield" stylesheets="@css/dashboardDesign.css" />
+                                    <Label layoutX="329.0" layoutY="38.0" text="Статус:" />
+                                    <ComboBox fx:id="addMedicines_status" layoutX="373.0" layoutY="34.0" onAction="#addMedicineListStatus" prefWidth="150.0" promptText="Выберите" styleClass="textfield" stylesheets="@css/dashboardDesign.css" />
+                                    <AnchorPane layoutX="663.0" layoutY="13.0" prefHeight="149.0" prefWidth="92.0" stylesheets="@css/dashboardDesign.css">
+                                       <styleClass>
+                                          <String fx:value="white-bg" />
+                                          <String fx:value="shadow" />
+                                       </styleClass>
+                                       <children>
+                                          <ImageView fx:id="addMedicines_imageView" fitHeight="149.0" fitWidth="92.0" pickOnBounds="true" preserveRatio="true" />
+                                       </children>
+                                    </AnchorPane>
+                                    <Button fx:id="addMedicines_importBtn" layoutX="679.0" layoutY="167.0" mnemonicParsing="false" onAction="#addMedicineImportImage" styleClass="control-btn" stylesheets="@css/dashboardDesign.css" text="Импорт" />
+                                    <Button fx:id="addMedicines_addBtn" layoutX="502.0" layoutY="120.0" mnemonicParsing="false" onAction="#addMedicinesAdd" styleClass="control-btn" stylesheets="@css/dashboardDesign.css" text="Добавить" textFill="#0b4615" />
+                                    <Button fx:id="addMedicines_updateBtn" layoutX="579.0" layoutY="120.0" mnemonicParsing="false" onAction="#addMedicineUpdate" styleClass="control-btn" stylesheets="@css/dashboardDesign.css" text="Обновить" />
+                                    <Button fx:id="addMedicines_clearBtn" layoutX="502.0" layoutY="167.0" mnemonicParsing="false" styleClass="control-btn" stylesheets="@css/dashboardDesign.css" text="Очистить" />
+                                    <Button fx:id="addMedicines_deleteBtn" layoutX="579.0" layoutY="167.0" mnemonicParsing="false" onAction="#addMedicineDelete" prefHeight="23.0" prefWidth="72.0" styleClass="control-btn" stylesheets="@css/dashboardDesign.css" text="Удалить" />
+                                    <Label layoutX="336.0" layoutY="70.0" text="Цена:" />
+                                    <TextField fx:id="addMedicines_price" layoutX="373.0" layoutY="66.0" promptText="₽0.0" styleClass="textfield" stylesheets="@css/dashboardDesign.css" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="14.0" layoutY="247.0" prefHeight="322.0" prefWidth="776.0" stylesheets="@css/dashboardDesign.css">
+                                 <styleClass>
+                                    <String fx:value="white-bg" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                                 <children>
+                                    <TableView fx:id="addMedicines_tableView" layoutX="20.0" layoutY="12.0" onMouseClicked="#addMedicineSelect" prefHeight="296.0" prefWidth="732.0">
+                                      <columns>
+                                        <TableColumn fx:id="addMedicines_col_medicineID" prefWidth="81.0" text="ID лекартсва" />
+                                        <TableColumn fx:id="addMedicines_col_brand" prefWidth="124.0" text="Производитель" />
+                                          <TableColumn fx:id="addMedicines_col_productName" prefWidth="193.0" text="Название" />
+                                          <TableColumn fx:id="addMedicines_col_type" prefWidth="86.0" text="Тип" />
+                                          <TableColumn fx:id="addMedicines_col_price" prefWidth="96.0" text="Цена" />
+                                          <TableColumn fx:id="addMedicines_col_status" prefWidth="70.0" text="Статус" />
+                                          <TableColumn fx:id="addMedicines_col_date" text="Дата" />
+                                      </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="purchase_form" layoutX="91.0" layoutY="96.0" prefHeight="577.0" prefWidth="803.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="548.0" prefWidth="773.0" stylesheets="@css/dashboardDesign.css">
+                                 <styleClass>
+                                    <String fx:value="white-bg" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                                 <children>
+                                    <AnchorPane layoutX="516.0" layoutY="93.0" prefHeight="548.0" prefWidth="257.0" stylesheets="@css/dashboardDesign.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="516.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <styleClass>
+                                          <String fx:value="white-bg" />
+                                          <String fx:value="shadow" />
+                                       </styleClass>
+                                       <children>
+                                          <Label layoutX="89.0" layoutY="34.0" text="Тип:">
+                                             <font>
+                                                <Font name="Arial" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <ComboBox fx:id="purchase_type" layoutX="123.0" layoutY="30.0" prefHeight="25.0" prefWidth="118.0" promptText="Выберите" styleClass="textfield" stylesheets="@css/dashboardDesign.css" />
+                                          <Label layoutX="5.0" layoutY="111.0" text="Производитель:">
+                                             <font>
+                                                <Font name="Arial" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <ComboBox fx:id="purchase_brand" layoutX="122.0" layoutY="107.0" prefHeight="25.0" prefWidth="120.0" promptText="Выберите" styleClass="textfield" stylesheets="@css/dashboardDesign.css" />
+                                          <Label layoutX="46.0" layoutY="148.0" text="Название:">
+                                             <font>
+                                                <Font name="Arial" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <ComboBox fx:id="purchase_productName" layoutX="122.0" layoutY="144.0" prefHeight="25.0" prefWidth="120.0" promptText="Выберите" styleClass="textfield" stylesheets="@css/dashboardDesign.css" />
+                                          <Label layoutX="23.0" layoutY="71.0" text="ID лекартсва:">
+                                             <font>
+                                                <Font name="Arial" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <ComboBox fx:id="purchase_medicineID" layoutX="123.0" layoutY="67.0" prefHeight="25.0" prefWidth="118.0" promptText="Выберите" styleClass="textfield" stylesheets="@css/dashboardDesign.css" />
+                                          <Button fx:id="purchase_addBtn" layoutX="104.0" layoutY="193.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="133.0" styleClass="control-btn" stylesheets="@css/dashboardDesign.css" text="Добавить в корзину" />
+                                          <Label layoutX="80.0" layoutY="333.0" text="Сумма:">
+                                             <font>
+                                                <Font name="Arial" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="purchase_total" layoutX="132.0" layoutY="333.0" text="₽0.0">
+                                             <font>
+                                                <Font name="Arial" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="80.0" layoutY="405.0" text="Баланс:">
+                                             <font>
+                                                <Font name="Arial" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="purchase_balance" layoutX="136.0" layoutY="406.0" text="₽0.0">
+                                             <font>
+                                                <Font name="Arial" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="80.0" layoutY="369.0" text="Кол-во:">
+                                             <font>
+                                                <Font name="Arial" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="purchase_amout" layoutX="138.0" layoutY="365.0" prefHeight="25.0" prefWidth="88.0" styleClass="textfield" stylesheets="@css/dashboardDesign.css" />
+                                          <Button fx:id="purchase_payBtn" layoutX="16.0" layoutY="480.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="225.0" styleClass="control-btn" stylesheets="@css/dashboardDesign.css" text="Оплата" />
+                                       </children>
+                                    </AnchorPane>
+                                    <TableView layoutX="14.0" layoutY="14.0" prefHeight="523.0" prefWidth="493.0">
+                                      <columns>
+                                        <TableColumn fx:id="purchase_col_medicineid" prefWidth="84.0" text="ID лекартсва" />
+                                        <TableColumn fx:id="purchase_col_brand" prefWidth="102.0" text="Производитель" />
+                                          <TableColumn fx:id="purchase_col_productName" prefWidth="64.0" text="Название" />
+                                          <TableColumn fx:id="purchase_col_type" text="Тип" />
+                                          <TableColumn fx:id="purchase_col_qty" prefWidth="64.0" text="Кол-во" />
+                                          <TableColumn fx:id="purchase_col_price" prefWidth="97.0" text="Цена" />
+                                      </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </right>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
