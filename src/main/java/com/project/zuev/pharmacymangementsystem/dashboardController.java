@@ -209,7 +209,7 @@ public class dashboardController implements Initializable {
                 || addMedicines_price.getText().isEmpty()
                 || getData.path == null || getData.path == "") {
                 alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Error Message");
+                alert.setTitle("Ошибка");
                 alert.setHeaderText(null);
                 alert.setContentText("Пожалуйста, заполните все поля");
                 alert.showAndWait();
@@ -223,7 +223,7 @@ public class dashboardController implements Initializable {
 
                 if(result.next()){
                     alert = new Alert(Alert.AlertType.ERROR);
-                    alert.setTitle("Error Message");
+                    alert.setTitle("Ошибка");
                     alert.setHeaderText(null);
                     alert.setContentText("ID лекарства " + addMedicines_medicineID.getText() + "уже существует");
                     alert.showAndWait();
@@ -284,13 +284,13 @@ public class dashboardController implements Initializable {
                     || addMedicines_price.getText().isEmpty()
                     || getData.path == null || getData.path == "") {
                 alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Error Message");
+                alert.setTitle("Ошибка");
                 alert.setHeaderText(null);
                 alert.setContentText("Пожалуйста, заполните все поля");
                 alert.showAndWait();
             }else{
                 alert = new Alert(Alert.AlertType.CONFIRMATION);
-                alert.setTitle("Confirmation Message");
+                alert.setTitle("Подтверждение");
                 alert.setHeaderText(null);
                 alert.setContentText("Вы уверены?");
                 Optional<ButtonType> option = alert.showAndWait();
@@ -329,7 +329,7 @@ public class dashboardController implements Initializable {
                     || addMedicines_price.getText().isEmpty()
                     || getData.path == null || getData.path == "") {
                 alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Error Message");
+                alert.setTitle("Ошибка");
                 alert.setHeaderText(null);
                 alert.setContentText("Пожалуйста, заполните все поля");
                 alert.showAndWait();
@@ -378,7 +378,7 @@ public class dashboardController implements Initializable {
         addMedicines_type.setItems(listData);
     }
 
-    private String[] addMedicineStatus = {"Доступные", "Не доступные"};
+    private String[] addMedicineStatus = {"Доступные", "Недоступные"};
     public void addMedicineListStatus(){
         List<String> listS = new ArrayList<>();
         for (String data: addMedicineStatus){
@@ -503,7 +503,7 @@ public class dashboardController implements Initializable {
         try {
 
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-            alert.setTitle("афацфафц");
+            alert.setTitle("Предупреждение");
             alert.setHeaderText(null);
             alert.setContentText("Вы точно хотите выйти?");
             Optional<ButtonType> option = alert.showAndWait();

@@ -11,7 +11,7 @@
 }
 
 .nav-form {
-    -fx-background-color:linear-gradient(to bottom right, #449d6b, #633364);
+    -fx-background-color:linear-gradient(from 55.9242% 16.5877% to 100.0% 90.9953%, #2a8d36 0.0%, #07188a 100.0%);
 }
 
 .nav-btn {
@@ -62,7 +62,7 @@
 .textfield {
     -fx-background-color:linear-gradient(to bottom, #efefef, #eee);
     -fx-background-radius: 4px;
-    -fx-border-color: linear-gradient(to bottom right, #449d6b, #633364);
+    -fx-border-color: linear-gradient(to bottom right, #449d6b, #07188a);
     -fx-border-radius: 4px;
     -fx-border-width: 1px;
 }
@@ -74,7 +74,7 @@
 
 .search {
     -fx-background-color: transparent;
-    -fx-border-color: linear-gradient(to bottom right, #449d6b, #633364);
+    -fx-border-color: linear-gradient(to bottom right, #449d6b, #07188a);
     -fx-border-radius: 4px;
     -fx-border-width: 1px;
     -fx-text-inner-padding: 0px, 0px, 0px, 50px;
@@ -89,7 +89,7 @@
 .table-view{
     -fx-background-color: transparent;
     -fx-padding:0px;
-    -fx-border-color: linear-gradient(to bottom right, #449d6b, #633364);
+    -fx-border-color: linear-gradient(to bottom right, #449d6b, #07188a);
     -fx-border-width: 2px;
     -fx-border-radius:8px;
 }
@@ -99,7 +99,7 @@
 }
 
 .table-view .column-header-background{
-    -fx-border-color: linear-gradient(to bottom right, #449d6b, #633364);
+    -fx-border-color: linear-gradient(to bottom right, #449d6b, #07188a);
     -fx-background-radius: 8px, 8px, 0px, 0px;
     -fx-background-insets: 0 0 0 0;
 }

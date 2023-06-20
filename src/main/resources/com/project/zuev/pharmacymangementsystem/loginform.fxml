@@ -6,6 +6,9 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
 
 <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.zuev.pharmacymangementsystem.MainFormController">
    <children>
@@ -15,10 +18,26 @@
             <AnchorPane layoutX="249.0" prefHeight="505.0" prefWidth="450.0">
                <children>
                   <FontAwesomeIcon glyphName="USER_MD" layoutX="219.0" layoutY="147.0" size="5em" />
-                  <TextField fx:id="username" layoutX="164.0" layoutY="202.0" onAction="#loginAdmin" promptText="Username" styleClass="textfield" stylesheets="@css/logDesign.css" />
-                  <TextField fx:id="password" layoutX="164.0" layoutY="240.0" onAction="#loginAdmin" promptText="Password" styleClass="textfield" stylesheets="@css/logDesign.css" />
-                  <Label layoutX="217.0" layoutY="167.0" text="Welcome" />
-                  <Button fx:id="loginBtn" layoutX="151.0" layoutY="301.0" mnemonicParsing="false" onAction="#loginAdmin" prefHeight="33.0" prefWidth="183.0" styleClass="login-btn" stylesheets="@css/logDesign.css" text="Login" />
+                  <TextField fx:id="username" layoutX="164.0" layoutY="202.0" onAction="#loginAdmin" promptText="Имя пользователя" styleClass="textfield" stylesheets="@css/logDesign.css" />
+                  <TextField fx:id="password" layoutX="164.0" layoutY="240.0" onAction="#loginAdmin" promptText="Пароль" styleClass="textfield" stylesheets="@css/logDesign.css" />
+                  <Label layoutX="189.0" layoutY="167.0" text="Добро пожаловать!">
+                     <textFill>
+                        <LinearGradient endX="1.0" endY="0.16113744075829378" startX="0.9431279620853081" startY="0.014218009478672966">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color red="0.1663011759519577" green="0.5526315569877625" blue="0.21137304604053497" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="0.027450980618596077" green="0.0941176488995552" blue="0.5411764979362488" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </textFill></Label>
+                  <Button fx:id="loginBtn" layoutX="151.0" layoutY="301.0" mnemonicParsing="false" onAction="#loginAdmin" prefHeight="33.0" prefWidth="183.0" styleClass="login-btn" stylesheets="@css/logDesign.css" text="Войти" />
                   <Button fx:id="close" layoutX="407.0" layoutY="14.0" mnemonicParsing="false" onAction="#close" prefHeight="24.0" prefWidth="65.0" styleClass="close" stylesheets="@css/logDesign.css" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="5.0">
                      <graphic>
                         <FontAwesomeIcon glyphName="CLOSE" />

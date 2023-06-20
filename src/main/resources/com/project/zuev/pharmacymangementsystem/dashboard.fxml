@@ -36,7 +36,7 @@
                               </Button>
                               <Button fx:id="minimize" layoutX="886.0" layoutY="6.0" mnemonicParsing="false" onAction="#minimize" prefHeight="24.0" prefWidth="56.0" styleClass="minimize" stylesheets="@css/dashboardDesign.css">
                                  <graphic>
-                                    <FontAwesomeIcon glyphName="LINE" size="1.2em" />
+                                    <FontAwesomeIcon glyphName="MINUS" size="1.2em" />
                                  </graphic>
                               </Button>
                            </children>

@@ -63,7 +63,7 @@ public class MainFormController {
                     // получить имя пользователя
                     getData.username = username.getText();
                     alert = new Alert(Alert.AlertType.INFORMATION);
-                    alert.setTitle("Ошибка");
+                    alert.setTitle("Успешно");
                     alert.setHeaderText(null);
                     alert.setContentText("Авторизация прошла успешно");
                     alert.showAndWait();
